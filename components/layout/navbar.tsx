@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { MobileNav } from './mobile-nav'
 import { useAuth } from '@/hooks/use-auth'
 import { User, LogOut, Menu } from 'lucide-react'
 import {
