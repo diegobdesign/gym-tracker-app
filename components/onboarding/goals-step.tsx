@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 const goalsSchema = z.object({
-  target_weight: z.coerce.number().positive().optional().or(z.literal('')),
+  target_weight: z.number().positive().nullable().optional(),
   experience_level: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
   primary_goal: z.enum(['strength', 'hypertrophy', 'endurance', 'weight_loss', 'general_fitness']).optional(),
 })

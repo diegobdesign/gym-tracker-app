@@ -9,9 +9,9 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 const metricsSchema = z.object({
-  current_weight: z.coerce.number().positive('Weight must be positive').optional(),
-  height: z.coerce.number().positive('Height must be positive').optional(),
-  body_fat_percentage: z.coerce.number().min(0).max(100).optional().or(z.literal('')),
+  current_weight: z.number().positive('Weight must be positive').nullable().optional(),
+  height: z.number().positive('Height must be positive').nullable().optional(),
+  body_fat_percentage: z.number().min(0).max(100).nullable().optional(),
 })
 
 type MetricsFormData = z.infer<typeof metricsSchema>
