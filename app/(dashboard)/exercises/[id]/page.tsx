@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Loader2 } from 'lucide-react'
 import Link from 'next/link'
+import { VideoPlayer } from '@/components/shared/video-player'
 
 export default function ExerciseDetailPage() {
   const params = useParams()
@@ -62,7 +63,8 @@ export default function ExerciseDetailPage() {
           <img
             src={exercise.image_url}
             alt={`${exercise.name} demonstration`}
-            className="h-auto w-full object-cover max-h-[400px] md:object-contain md:max-h-[600px] md:max-w-[400px] md:mx-auto"
+            loading="lazy"
+            className="h-auto w-full object-contain max-h-[500px] md:max-h-[700px] md:max-w-[500px] md:mx-auto"
           />
         </div>
       )}
@@ -92,14 +94,7 @@ export default function ExerciseDetailPage() {
             {exercise.video_url && (
               <div>
                 <h3 className="mb-2 font-semibold">Video Tutorial</h3>
-                <a
-                  href={exercise.video_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  Watch Video
-                </a>
+                <VideoPlayer url={exercise.video_url} title={exercise.name} />
               </div>
             )}
           </CardContent>

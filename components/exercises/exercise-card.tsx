@@ -12,11 +12,12 @@ export function ExerciseCard({ exercise }: ExerciseCardProps) {
     <Link href={`/exercises/${exercise.id}`}>
       <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1 animate-[fadeInUp_0.4s_ease-out]">
         {exercise.image_url && (
-          <div className="relative aspect-video w-full overflow-hidden rounded-t-lg bg-gradient-to-br from-muted/20 to-muted/5 md:aspect-[3/4] md:max-h-[280px]">
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-lg bg-gradient-to-br from-muted/20 to-muted/5 md:max-h-[280px]">
             <img
               src={exercise.image_url}
               alt={exercise.name}
-              className="h-full w-full object-cover md:object-contain"
+              loading="lazy"
+              className="h-full w-full object-contain"
             />
           </div>
         )}

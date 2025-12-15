@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { Dumbbell, PlayCircle, TrendingUp, ClipboardList, Calendar, Clock, Scale, Flame } from 'lucide-react'
 import { format, startOfWeek, endOfWeek, differenceInDays } from 'date-fns'
+import { AIChatPanel } from '@/components/ai-assistant/ai-chat-panel'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -235,6 +236,9 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* AI Assistant Chat Panel */}
+      <AIChatPanel />
     </div>
   )
 }
